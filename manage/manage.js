@@ -68,10 +68,10 @@ $("editShortcuts").addEventListener("click", () => run(() => chrome.tabs.create(
 
 // What clicking a marker does: "cue", "play", or "edit". Stored apart from the
 // settings section since it changes often.
-let markerMode = "play";
+let markerMode = "edit";
 
 async function loadMarkerMode() {
-  const nextMode = (await chrome.storage.local.get("markerMode")).markerMode || "play";
+  const nextMode = (await chrome.storage.local.get("markerMode")).markerMode || "edit";
   if (nextMode !== markerMode) { selectedRows.clear(); selectedVideoKeys.clear(); }
   markerMode = nextMode;
   document.querySelectorAll(".edit-only").forEach((panel) => {
