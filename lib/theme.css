@@ -1,0 +1,353 @@
+/* Shared soonmarker palette and wordmark. */
+:root {
+  --surface: #fff;
+  --control-ink: #000;
+  --button-ink: #334155;
+  --primary: #0f172a;
+  --primary-hover: #334155;
+  --primary-active: #1e293b;
+  --primary-ink: #fff;
+  --mode-ink: #475569;
+  --mode-border: transparent;
+  --mode-hover-border: transparent;
+  --strong-ink: #0f172a;
+  --danger: #b91c1c;
+  --danger-hover: #991b1b;
+  --danger-active: #7f1d1d;
+  --danger-ink: #fff;
+  --danger-soft: #fef2f2;
+  --danger-soft-active: #fee2e2;
+  --toast-background: #0f172a;
+  --toast-ink: #fff;
+  --shadow: rgb(15 23 42 / 8%);
+  --backdrop: rgb(15 23 42 / 35%);
+  --ink: #292524;
+  --muted: #78716c;
+  --subtle: #a8a29e;
+  --canvas: #faf9f6;
+  --border: #d6d3d1;
+  --surface-hover: #f5f3ef;
+  --surface-active: #e7e5e4;
+  --accent: #92400e;
+  --accent-hover: #78350f;
+  --accent-soft: #fff4d6;
+  --accent-active: #fde6ad;
+  --focus: #b45309;
+  --time-background: #fffbef;
+  --time-border: #fde6ad;
+  --time-ink: #92400e;
+  --mode-indicator: #f59e0b;
+}
+h1.brand { display: flex; align-items: center; gap: 9px; font-weight: 750; letter-spacing: -0.5px; }
+.brand-icon { width: 28px; height: 28px; flex: none; }
+input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+:root[data-theme="classic"] {
+  --ink: #1f2937;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+  --canvas: #f8fafc;
+  --border: #cbd5e1;
+  --surface-hover: #f1f5f9;
+  --surface-active: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #e0e7ff;
+  --accent-active: #c7d2fe;
+  --focus: #2563eb;
+  --time-background: #fff;
+  --time-border: transparent;
+  --time-ink: #1f2937;
+  --mode-indicator: transparent;
+}
+:root[data-theme="classic"] .brand-icon { display: none; }
+:root[data-theme="classic"] h1.brand { font-weight: 700; letter-spacing: normal; }
+
+
+/* Coral, pale yellow and rose inspired by the documents banner. */
+:root[data-theme="coral"] {
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --primary-active: #70271e;
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --ink: #3d2926;
+  --muted: #805b53;
+  --subtle: #997167;
+  --canvas: #fff8f2;
+  --border: #e5bcb0;
+  --surface-hover: #fff0eb;
+  --surface-active: #f7d7d0;
+  --accent: #aa4030;
+  --accent-hover: #863024;
+  --accent-soft: #fff1ac;
+  --accent-active: #ffe67e;
+  --focus: #aa4030;
+  --time-background: #fff7cb;
+  --time-border: #ebd47c;
+  --time-ink: #863024;
+  --mode-indicator: #ffea83;
+}
+:root[data-theme="coral"] header {
+  padding: 16px;
+  border-radius: 8px;
+  border-bottom: 4px solid #ffea83;
+  background: linear-gradient(65deg, transparent 72%, #ed989766 72%, #ed989766 77%, transparent 77%), linear-gradient(110deg, #c7653d, #f16e59);
+  color: #fff;
+}
+:root[data-theme="coral"] header .muted,
+:root[data-theme="coral"] header .version,
+:root[data-theme="coral"] header .link { color: #3d2926; }
+:root[data-theme="coral"] header .link:hover { color: #592c23; }
+
+
+
+/* Burgundy controls and a red banner inspired by https://portaly.cc/miaopoya. */
+:root[data-theme="burgundy"] {
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --primary-active: #4d0013;
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --ink: #333333;
+  --muted: #6f6166;
+  --subtle: #85747a;
+  --canvas: #f8f8f8;
+  --border: #d9c5cb;
+  --surface-hover: #faf0f3;
+  --surface-active: #efd9e0;
+  --accent: #800020;
+  --accent-hover: #650019;
+  --accent-soft: #f9e9ee;
+  --accent-active: #efccd6;
+  --focus: #a8002a;
+  --time-background: #faf0f3;
+  --time-border: #e7c4ce;
+  --time-ink: #800020;
+  --mode-indicator: #f2b6c5;
+}
+:root[data-theme="burgundy"] header {
+  padding: 16px;
+  border-radius: 8px;
+  border-bottom: 4px solid #800020;
+  background: linear-gradient(108deg, #fff 0%, #fff 86%, #eddae0 86%, #eddae0 91%, #dc143c 91%);
+  color: var(--ink);
+}
+:root[data-theme="burgundy"] header .version,
+:root[data-theme="burgundy"] header .link {
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--accent);
+}
+
+
+/* Explicit form colors let future dark palettes cover native controls too. */
+input, textarea, select { background-color: var(--surface); color: var(--control-ink); }
+
+
+/* Violet and pink palette inspired by https://www.sdp.org.tw/. */
+:root[data-theme="violet"] {
+  --ink: #191822;
+  --muted: #686175;
+  --subtle: #82758f;
+  --canvas: #faf8fc;
+  --surface: #fff;
+  --control-ink: #191822;
+  --button-ink: #493b64;
+  --border: #d9cfe6;
+  --surface-hover: #f4effb;
+  --surface-active: #e9dff5;
+  --accent: #4829d8;
+  --accent-hover: #3620aa;
+  --accent-soft: #fce7f3;
+  --accent-active: #f8cce4;
+  --focus: #4829d8;
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --primary-active: #291880;
+  --mode-ink: #686175;
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: #ff80c3;
+  --strong-ink: #291880;
+  --time-background: #f3efff;
+  --time-border: #d8ccf7;
+  --time-ink: #4829d8;
+  --toast-background: #30204f;
+  --shadow: rgb(48 32 79 / 8%);
+  --backdrop: rgb(48 32 79 / 35%);
+}
+:root[data-theme="violet"] header {
+  padding: 16px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #f0eaff, #fff2f8);
+  box-shadow: inset 4px 0 0 #4829d8;
+}
+:root[data-theme="violet"] h1.brand { color: var(--accent); }
+
+/* Quiet, warm paper palettes with dark text and solid controls. */
+:root[data-theme="oat"] {
+  --ink: #332d27;
+  --muted: #6a5e52;
+  --subtle: #706254;
+  --canvas: #f7f3eb;
+  --surface: #fffdf8;
+  --border: #d8cbbc;
+  --surface-hover: #f1eade;
+  --surface-active: #e5d9c9;
+  --accent: #76563b;
+  --accent-hover: #60432d;
+  --primary-active: #493222;
+  --accent-soft: #efe3cf;
+  --accent-active: #e4cfad;
+  --control-ink: var(--ink);
+  --button-ink: var(--ink);
+  --strong-ink: var(--ink);
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: var(--accent-active);
+  --focus: var(--accent);
+  --time-background: var(--accent-soft);
+  --time-border: var(--accent-active);
+  --time-ink: var(--accent-hover);
+  --toast-background: var(--ink);
+  --shadow: rgb(50 40 30 / 8%);
+  --backdrop: rgb(50 40 30 / 35%);
+}
+
+:root[data-theme="sage"] {
+  --ink: #29322b;
+  --muted: #59675b;
+  --subtle: #5f6b5c;
+  --canvas: #f3f5ee;
+  --surface: #fdfef9;
+  --border: #c9d2c1;
+  --surface-hover: #eaf0e3;
+  --surface-active: #dce5d4;
+  --accent: #4c6548;
+  --accent-hover: #3d5239;
+  --primary-active: #2e402c;
+  --accent-soft: #e6eddb;
+  --accent-active: #d3dfc4;
+  --control-ink: var(--ink);
+  --button-ink: var(--ink);
+  --strong-ink: var(--ink);
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: var(--accent-active);
+  --focus: var(--accent);
+  --time-background: var(--accent-soft);
+  --time-border: var(--accent-active);
+  --time-ink: var(--accent-hover);
+  --toast-background: var(--ink);
+  --shadow: rgb(50 40 30 / 8%);
+  --backdrop: rgb(50 40 30 / 35%);
+}
+
+:root[data-theme="clay"] {
+  --ink: #392e29;
+  --muted: #715c51;
+  --subtle: #786459;
+  --canvas: #faf3ed;
+  --surface: #fffdf9;
+  --border: #dfcbbd;
+  --surface-hover: #f5e8dd;
+  --surface-active: #ecd8c9;
+  --accent: #94583f;
+  --accent-hover: #794631;
+  --primary-active: #603624;
+  --accent-soft: #f7e5d8;
+  --accent-active: #edcdb7;
+  --control-ink: var(--ink);
+  --button-ink: var(--ink);
+  --strong-ink: var(--ink);
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: var(--accent-active);
+  --focus: var(--accent);
+  --time-background: var(--accent-soft);
+  --time-border: var(--accent-active);
+  --time-ink: var(--accent-hover);
+  --toast-background: var(--ink);
+  --shadow: rgb(50 40 30 / 8%);
+  --backdrop: rgb(50 40 30 / 35%);
+}
+
+:root[data-theme="mist"] {
+  --ink: #2e3537;
+  --muted: #5a6669;
+  --subtle: #606c6f;
+  --canvas: #f4f4ef;
+  --surface: #fdfefa;
+  --border: #c9d2d0;
+  --surface-hover: #eaf0ed;
+  --surface-active: #dce5e2;
+  --accent: #48676e;
+  --accent-hover: #39535a;
+  --primary-active: #2b4046;
+  --accent-soft: #e4eeeb;
+  --accent-active: #ccdfdc;
+  --control-ink: var(--ink);
+  --button-ink: var(--ink);
+  --strong-ink: var(--ink);
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: var(--accent-active);
+  --focus: var(--accent);
+  --time-background: var(--accent-soft);
+  --time-border: var(--accent-active);
+  --time-ink: var(--accent-hover);
+  --toast-background: var(--ink);
+  --shadow: rgb(50 40 30 / 8%);
+  --backdrop: rgb(50 40 30 / 35%);
+}
+
+:root[data-theme="rose"] {
+  --ink: #382e31;
+  --muted: #6e5a61;
+  --subtle: #766269;
+  --canvas: #f8f2f1;
+  --surface: #fffaf8;
+  --border: #ddc9cc;
+  --surface-hover: #f3e6e6;
+  --surface-active: #e9d5d8;
+  --accent: #855462;
+  --accent-hover: #6d4350;
+  --primary-active: #55333e;
+  --accent-soft: #f3e1e4;
+  --accent-active: #e6c8cf;
+  --control-ink: var(--ink);
+  --button-ink: var(--ink);
+  --strong-ink: var(--ink);
+  --primary: var(--accent);
+  --primary-hover: var(--accent-hover);
+  --mode-ink: var(--muted);
+  --mode-border: var(--accent);
+  --mode-hover-border: var(--accent-hover);
+  --mode-indicator: var(--accent-active);
+  --focus: var(--accent);
+  --time-background: var(--accent-soft);
+  --time-border: var(--accent-active);
+  --time-ink: var(--accent-hover);
+  --toast-background: var(--ink);
+  --shadow: rgb(50 40 30 / 8%);
+  --backdrop: rgb(50 40 30 / 35%);
+}

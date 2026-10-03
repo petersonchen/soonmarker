@@ -1,0 +1,27 @@
+/* Shared button sizes and states for the management page and popup. */
+button {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 13px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  background: var(--surface);
+  color: var(--button-ink);
+}
+button:hover:not(:disabled) { background: var(--surface-hover); border-color: var(--subtle); }
+button:active:not(:disabled) { background: var(--surface-active); }
+button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button:disabled { opacity: 0.5; cursor: default; }
+.primary, .play { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.primary:hover:not(:disabled), .play:hover:not(:disabled) { background: var(--primary-hover); border-color: var(--primary-hover); }
+.primary:active:not(:disabled), .play:active:not(:disabled) { background: var(--primary-active); border-color: var(--primary-active); }
+.danger { background: var(--danger); border-color: var(--danger); color: var(--danger-ink); }
+.danger:hover:not(:disabled) { background: var(--danger-hover); border-color: var(--danger-hover); }
+.danger:active:not(:disabled) { background: var(--danger-active); border-color: var(--danger-active); }
+.small-button { padding: 3px 9px; font-size: 12px; line-height: 20px; }
+.delete { padding: 3px 7px; border-color: transparent; background: transparent; color: var(--muted); font-size: 16px; }
+.delete:hover:not(:disabled) { background: var(--danger-soft); border-color: transparent; color: var(--danger); }
+.delete:active:not(:disabled) { background: var(--danger-soft-active); }

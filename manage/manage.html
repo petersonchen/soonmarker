@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>soonmarker</title>
+  <link rel="stylesheet" href="../lib/buttons.css">
+  <link rel="stylesheet" href="../lib/theme.css">
+  <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="title-row"><h1 class="brand"><img class="brand-icon" src="../icons/icon.svg" alt="">soonmarker</h1><span id="version" class="version"></span></div>
+    </header>
+
+    <div class="marker-toolbar" aria-label="Marker 控制列">
+      <div class="list-tools">
+        <input id="search" type="search" placeholder="搜尋 Episode、網站、影片標題、Marker 標題" autocomplete="off" aria-label="搜尋全部 Episode 與影片">
+        <span class="modes-label" id="modesLabel">模式：</span>
+        <div id="modes" class="modes" role="group" aria-labelledby="modesLabel">
+          <button data-mode="cue" title="點選 Marker：跳至該時間並暫停">CUE</button>
+          <button data-mode="play" title="點選 Marker：跳至該時間並播放">PLAY</button>
+          <button data-mode="edit" title="編輯或刪除 Marker">EDIT</button>
+        </div>
+      </div>
+    </div>
+
+    <details class="card" open>
+      <summary class="library-heading"><h2>影片庫</h2>
+      <div id="editSelection" class="edit-selection hidden">
+        <div class="selection-controls">
+          <span id="selectionCount" class="muted" aria-live="polite">已選 0 支影片</span>
+          <button id="selectAllVideos" class="small-button" title="全選目前顯示的影片">全選</button>
+          <button id="clearSelection" class="small-button" disabled>取消選取</button>
+          <span id="libraryStats" class="muted" title="影片、Marker、Episode 總數"></span>
+        </div>
+        <div class="selection-actions">
+        <button id="assignSelected" class="small-button" disabled>加入 Episode</button>
+        <button id="removeSelected" class="small-button" disabled>從 Episode 移除</button>
+        </div>
+      </div>
+        <button id="newEpisode" class="small-button hidden" type="button">＋ 新增 Episode</button>
+      </summary>
+      <div id="list"></div>
+      <div id="listEmpty" class="empty hidden">沒有符合的 Episode 或 Marker</div>
+      <div id="listHint" class="hint hidden"></div>
+      <button id="listMore" type="button" class="small-button hidden"></button>
+    </details>
+
+    <details class="card edit-only hidden" id="exportPanel">
+      <summary><h2>匯出</h2></summary>
+      <p class="muted">匯出 Episode 或 backlog 的全部 Marker 與影片順序。完整備份包含所有 Episode、影片、Marker 與設定。</p>
+      <div class="form-row">
+        <label>範圍 <select id="exportEpisode"></select></label>
+        <button id="exportBuild" class="primary">產生</button>
+      </div>
+      <div id="exportResult" class="hidden">
+        <div id="exportSummary" class="summary"></div>
+        <textarea id="exportText" readonly rows="12" aria-label="匯出內容"></textarea>
+        <button id="exportCopy" class="primary">複製</button>
+        <button id="exportDownload">下載 JSON</button>
+        <span id="exportCopied" class="muted hidden">已複製</span>
+      </div>
+    </details>
+
+    <details class="card edit-only hidden">
+      <summary><h2>匯入</h2></summary>
+      <p class="muted">貼上 v2 JSON、CSV 或從試算表複製的表格，也可選擇檔案。先預覽，再確認匯入。</p>
+      <p class="muted">表格第一列：url、timecode、note，可選填 title。Timecode 支援 HH:MM:SS、MM:SS 或秒數；每列是一筆 Marker。</p>
+      <label class="file-label">選擇檔案 <input id="importFile" type="file" accept=".json,.csv,.tsv,.txt,application/json,text/csv,text/tab-separated-values,text/plain"></label>
+      <textarea id="importText" rows="12" placeholder="貼上 v2 JSON 或表格資料" aria-label="匯入內容"></textarea>
+      <div class="form-row" id="importTargetRow">
+        <label>目標 <select id="importTarget"></select></label>
+        <label id="importNameLabel" class="hidden">Episode 名稱 <input id="importName" maxlength="120"></label>
+      </div>
+      <div class="form-row">
+        <label>同一 Marker 內容衝突時
+          <select id="importConflict"><option value="local">保留本機內容</option><option value="incoming">採用匯入內容</option></select>
+        </label>
+      </div>
+      <button id="importPreview" class="primary">預覽</button>
+      <div id="importResult" class="hidden">
+        <div id="importSummary" class="summary" aria-live="polite"></div>
+        <button id="importApply" class="primary" disabled>確認匯入</button>
+      </div>
+    </details>
+
+    <details class="card edit-only hidden" id="settingsPanel">
+      <summary><h2>設定</h2><span id="settingsStatus" class="muted settings-status" role="status" aria-live="polite"></span></summary>
+      <div class="settings-body">
+        <section class="settings-group" aria-labelledby="displaySettingsTitle">
+          <h3 id="displaySettingsTitle">顯示</h3>
+          <div class="setting-row">
+            <label for="theme">主題</label>
+            <div class="setting-control"><select id="theme"></select></div>
+          </div>
+          <div class="setting-row">
+            <label for="recentEpisodes">Episode 顯示數量</label>
+            <div class="setting-control"><input id="recentEpisodes" type="number" min="0" step="1" aria-describedby="recentEpisodesHint"><span>個</span></div>
+            <p id="recentEpisodesHint" class="muted setting-hint">未搜尋時依名稱由大到小顯示；0 為全部。搜尋不受限制，backlog 不計入數量。</p>
+          </div>
+        </section>
+        <section class="settings-group" aria-labelledby="playbackSettingsTitle">
+          <h3 id="playbackSettingsTitle">播放</h3>
+          <div class="setting-row">
+            <label for="cueLead">CUE／PLAY 提前秒數</label>
+            <div class="setting-control"><input id="cueLead" type="number" min="0" max="60" step="1" aria-describedby="cueLeadHint"><span>秒</span></div>
+            <p id="cueLeadHint" class="muted setting-hint">從 Marker 前 0–60 秒開始，0 表示不提前。適用於 popup 與管理頁的 CUE／PLAY、EDIT 試播，不影響「跳到時間」。</p>
+          </div>
+          <div class="setting-row setting-toggle">
+            <label for="reuseTab"><input id="reuseTab" type="checkbox" aria-describedby="reuseTabHint">固定使用同一個播放分頁</label>
+            <p id="reuseTabHint" class="muted setting-hint">管理頁切換影片時沿用播放分頁；關閉後優先使用已開啟的影片分頁，否則開新分頁。</p>
+          </div>
+        </section>
+      </div>
+    </details>
+
+    <details class="card edit-only hidden">
+      <summary><h2>快捷鍵</h2></summary>
+      <h3>微調 Marker 秒數</h3>
+      <ol class="steps">
+        <li>將模式切換為 <strong>EDIT</strong>，點選要調整的 Marker 的 Timecode。</li>
+        <li>按 <kbd>↑</kbd> 或 <kbd>↓</kbd> 加減 1 秒。</li>
+        <li>按 <kbd>Shift</kbd>+<kbd>Enter</kbd> 儲存，並在背景分頁從該時間播放；畫面留在管理頁，游標仍在 Timecode 欄位。</li>
+        <li>邊聽邊重複步驟 2、3，直到時間正確。</li>
+        <li>按 <kbd>Enter</kbd> 或點選其他地方結束編輯。</li>
+      </ol>
+
+      <h3>影片頁</h3>
+      <table class="shortcuts">
+        <tr><td><kbd id="saveShortcut">未設定</kbd></td><td>不開 popup，直接將目前位置儲存為 Marker <button id="editShortcuts" type="button" class="small-button">修改快捷鍵</button></td></tr>
+      </table>
+
+      <h3>管理頁 EDIT 模式</h3>
+      <table class="shortcuts">
+        <tr><td><kbd>↑</kbd>／<kbd>↓</kbd></td><td>在 Timecode 欄位加減 1 秒，尚未儲存</td></tr>
+        <tr><td><kbd>Enter</kbd></td><td>儲存並結束編輯</td></tr>
+        <tr><td><kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>在 Timecode 或標題欄位儲存，並在背景分頁從該 Marker 播放；游標留在欄位中</td></tr>
+        <tr><td><kbd>Shift</kbd>+點選 ▶</td><td>在背景分頁從該 Marker 播放</td></tr>
+      </table>
+
+      <h3>popup</h3>
+      <table class="shortcuts">
+        <tr><td><kbd>Enter</kbd>（Marker 說明）</td><td>儲存目前位置</td></tr>
+        <tr><td><kbd>Enter</kbd>（跳到時間）</td><td>跳到該時間並播放</td></tr>
+        <tr><td><kbd>↑</kbd>／<kbd>↓</kbd>（Marker 的 Timecode）</td><td>加減 1 秒，按 <kbd>Enter</kbd> 儲存</td></tr>
+      </table>
+    </details>
+  </main>
+  <dialog id="episodeDialog" aria-labelledby="episodeDialogTitle">
+    <form id="episodeForm">
+      <h2 id="episodeDialogTitle">新增 Episode</h2>
+      <label id="episodeNameLabel">名稱 <input id="episodeName" maxlength="120" autocomplete="off"></label>
+      <p id="episodeDeleteHint" class="muted hidden"></p>
+      <p id="episodeDialogError" class="error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close-dialog="episodeDialog">取消</button><button id="episodeSave" class="primary" type="submit">儲存</button></div>
+    </form>
+  </dialog>
+  <dialog id="assignDialog" aria-labelledby="assignTitle">
+    <form id="assignForm">
+      <h2 id="assignTitle">加入 Episode</h2>
+      <p id="assignDescription" class="muted">保留影片在其他 Episode 的歸屬，Marker 共用。</p>
+      <label>Episode <select id="assignEpisode"></select></label>
+      <p id="assignSummary" class="muted" aria-live="polite"></p>
+      <div id="assignVideos"></div>
+      <p id="assignError" class="error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close-dialog="assignDialog">取消</button><button id="assignSave" class="primary" type="submit">確認加入</button></div>
+    </form>
+  </dialog>
+  <dialog id="removeDialog" aria-labelledby="removeTitle">
+    <form id="removeForm">
+      <h2 id="removeTitle">從所選 Episode 移除</h2>
+      <p class="muted">依勾選位置移除影片歸屬，保留影片、Marker 與其他 Episode 的歸屬。沒有其他歸屬時回到 backlog。</p>
+      <p id="removeSummary" class="muted" aria-live="polite"></p>
+      <div id="removeGroups"></div>
+      <p id="removeError" class="error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close-dialog="removeDialog">取消</button><button id="removeSave" type="submit">確認移除</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status" class="toast hidden"><span id="toastText"></span><button id="toastAction" class="hidden"></button></div>
+  <script src="../lib/theme-catalog.js"></script>
+  <script src="../lib/theme.js"></script>
+  <script src="../lib/timecode.js"></script>
+  <script src="../lib/markers.js"></script>
+  <script src="../lib/marker-fields.js"></script>
+  <script src="../sites/tcc.js"></script>
+  <script src="../sites/youtube.js"></script>
+  <script src="../sites/ivod.js"></script>
+  <script src="../lib/video-key.js"></script>
+  <script src="../lib/import-formats.js"></script>
+  <script src="../lib/library.js"></script>
+  <script src="common.js"></script>
+  <script src="list.js"></script>
+  <script src="dialogs.js"></script>
+  <script src="seek.js"></script>
+  <script src="transfer.js"></script>
+  <script src="manage.js"></script>
+</body>
+</html>

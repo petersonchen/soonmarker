@@ -1,0 +1,92 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 420px;
+  min-height: 260px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+}
+main { padding: 16px; }
+header { margin-bottom: 14px; }
+.title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.version { color: var(--subtle); font-size: 11px; font-variant-numeric: tabular-nums; }
+.title-meta { display: flex; align-items: baseline; gap: 8px; }
+.link { padding: 0; border: 0; background: none; color: var(--accent); font-size: 12px; font-weight: 600; }
+h1 { margin: 0 0 5px; font-size: 18px; }
+.muted { color: var(--muted); font-size: 12px; }
+.hidden { display: none !important; }
+.notice, .empty {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: var(--surface);
+}
+.time-row strong { font-size: 22px; font-variant-numeric: tabular-nums; }
+label { display: block; margin: 8px 0 5px; font-size: 13px; font-weight: 600; }
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font: inherit;
+}
+.primary {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+}
+.hint { margin-top: 6px; text-align: center; }
+#leadHint { margin-right: 8px; }
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.marker {
+  display: grid;
+  grid-template-columns: 82px minmax(90px, 1fr) auto auto auto;
+  gap: 7px;
+  align-items: center;
+  padding: 9px;
+  margin-bottom: 7px;
+  border-radius: 8px;
+  background: var(--surface);
+}
+.marker-edit { min-width: 0; padding: 6px 7px; border-color: transparent; background: var(--canvas); font-size: 12px; }
+.marker-edit:focus { border-color: var(--focus); background: var(--surface); outline: 2px solid var(--focus); outline-offset: 1px; }
+.marker-time { font-variant-numeric: tabular-nums; font-weight: 700; }
+.marker-note { font-size: 13px; }
+.marker button { padding: 3px 7px; font-size: 12px; }
+.marker .delete { font-size: 16px; }
+.empty { text-align: center; font-size: 13px; }
+
+.goto-row {
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.goto-row input {
+  font-variant-numeric: tabular-nums;
+}
+.goto-row .play {
+  padding: 10px;
+}
+
+.link:hover:not(:disabled) { background: none; color: var(--accent-hover); text-decoration: underline; }
+.link:active:not(:disabled) { background: none; }
+
+.time-row { border: 1px solid var(--time-border); background: var(--time-background); }
+.time-row strong { color: var(--time-ink); }

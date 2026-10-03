@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>soonmarker</title>
+  <link rel="stylesheet" href="../lib/buttons.css">
+  <link rel="stylesheet" href="../lib/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="title-row"><h1 class="brand"><img class="brand-icon" src="../icons/icon.svg" alt="">soonmarker</h1><span class="title-meta"><span id="version" class="version"></span><button id="manage" class="link">管理</button></span></div>
+      <div id="videoTitle" class="muted">正在讀取影片…</div>
+    </header>
+
+    <section id="unsupported" class="notice hidden"></section>
+
+    <section id="controls" class="hidden">
+      <div class="time-row">
+        <span>目前時間</span>
+        <strong id="currentTime">00:00:00</strong>
+      </div>
+
+      <label for="goTime">跳到時間</label>
+      <div class="goto-row">
+        <input id="goTime" type="text" inputmode="numeric" placeholder="HH:MM:SS" autocomplete="off">
+        <button id="goPlay" class="play">PLAY</button>
+      </div>
+
+      <label for="note">Marker 說明</label>
+      <input id="note" type="text" maxlength="120" placeholder="例如：交通局回答">
+      <button id="save" class="primary">＋ 儲存目前位置</button>
+      <div id="shortcutHint" class="muted hint hidden"></div>
+
+      <div class="section-title">
+        <span>這支影片的 Markers</span>
+        <span class="muted"><span id="leadHint" class="hidden"></span><span id="count"></span></span>
+      </div>
+      <div id="markers"></div>
+      <div id="empty" class="empty">尚未建立 Marker</div>
+    </section>
+  </main>
+  <script src="../lib/theme-catalog.js"></script>
+  <script src="../lib/theme.js"></script>
+  <script src="../lib/timecode.js"></script>
+  <script src="../lib/markers.js"></script>
+  <script src="../lib/marker-fields.js"></script>
+  <script src="../sites/tcc.js"></script>
+  <script src="../sites/youtube.js"></script>
+  <script src="../sites/ivod.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
