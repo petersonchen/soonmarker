@@ -1,0 +1,110 @@
+{
+  "format": "soonmarker",
+  "version": 2,
+  "kind": "backup",
+  "episodes": [
+    {
+      "createdAt": "2026-10-03T20:52:43.168Z",
+      "id": "61e30b1d-535c-4a5a-8d9c-1ba3d855f706",
+      "name": "ep2",
+      "updatedAt": "2026-10-03T20:52:43.168Z",
+      "videoKeys": [
+        "youtube:eRsGyueVLvQ"
+      ]
+    },
+    {
+      "createdAt": "2026-10-03T20:52:43.163Z",
+      "id": "ccfb021d-f2c8-4f0b-b005-a173b54ad593",
+      "name": "ep1",
+      "updatedAt": "2026-10-03T20:52:43.163Z",
+      "videoKeys": [
+        "youtube:aqz-KE-bpKQ"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "videoKey": "youtube:aqz-KE-bpKQ",
+      "pageUrl": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+      "site": "youtube",
+      "title": "Big Buck Bunny 60fps 4K - Official Blender Foundation Short Film",
+      "markers": [
+        {
+          "createdAt": "2026-10-03T20:52:43.162Z",
+          "id": "2ba78f10-642d-4599-a4f9-fc99b693dea0",
+          "note": "觀察開場的構圖與配色",
+          "time": 30,
+          "updatedAt": "2026-10-03T20:52:43.162Z"
+        },
+        {
+          "createdAt": "2026-10-03T20:52:43.163Z",
+          "id": "541fdaf9-4d95-40db-9d9e-67ce418f599f",
+          "note": "整理角色動作的參考",
+          "time": 90,
+          "updatedAt": "2026-10-03T20:52:43.163Z"
+        },
+        {
+          "createdAt": "2026-10-03T20:52:43.163Z",
+          "id": "62e2ab11-1d8d-400e-a70a-a5962c924186",
+          "note": "回看這段的鏡頭安排",
+          "time": 180,
+          "updatedAt": "2026-10-03T20:52:43.163Z"
+        },
+        {
+          "createdAt": "2026-10-04T15:29:53.819Z",
+          "deletedAt": "2026-10-04T15:32:21.528Z",
+          "id": "7bf6ed34-7438-41d3-a540-d451a86cc983",
+          "note": "回看這段的角色動作",
+          "time": 102.494147,
+          "updatedAt": "2026-10-04T15:29:53.819Z"
+        },
+        {
+          "createdAt": "2026-10-04T15:31:48.168Z",
+          "deletedAt": "2026-10-04T15:32:21.561Z",
+          "id": "d0d0986e-a438-4510-8d4d-32f1ae621ffe",
+          "note": "回看這段的角色動作",
+          "time": 120,
+          "updatedAt": "2026-10-04T15:31:48.168Z"
+        },
+        {
+          "createdAt": "2026-10-04T15:32:21.677Z",
+          "id": "6882f085-0078-4e01-8a4d-d3d6ce86a02b",
+          "note": "回看這段的角色動作",
+          "time": 120,
+          "updatedAt": "2026-10-04T15:32:21.677Z"
+        }
+      ]
+    },
+    {
+      "videoKey": "youtube:eRsGyueVLvQ",
+      "pageUrl": "https://www.youtube.com/watch?v=eRsGyueVLvQ",
+      "site": "youtube",
+      "title": "Sintel - Open Movie by Blender Foundation",
+      "markers": [
+        {
+          "createdAt": "2026-10-03T20:52:43.168Z",
+          "id": "f1ca55fd-1dbc-4a9a-8281-a82822f30a6a",
+          "note": "觀察場景與光線",
+          "time": 30,
+          "updatedAt": "2026-10-03T20:52:43.168Z"
+        },
+        {
+          "createdAt": "2026-10-03T20:52:43.168Z",
+          "id": "bac86265-cecf-4846-aabd-80efcb53e7ec",
+          "note": "整理角色表情的參考",
+          "time": 120,
+          "updatedAt": "2026-10-03T20:52:43.168Z"
+        },
+        {
+          "createdAt": "2026-10-03T20:52:43.168Z",
+          "id": "e82137a4-8d90-4466-80ad-76bd1d00a3fc",
+          "note": "回看這段的聲音與畫面",
+          "time": 240,
+          "updatedAt": "2026-10-03T20:52:43.168Z"
+        }
+      ]
+    }
+  ],
+  "settings": {},
+  "markerMode": "edit"
+}

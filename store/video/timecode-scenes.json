@@ -1,0 +1,62 @@
+[
+  {
+    "id": "intro",
+    "title": "管理頁 timecode 微調教學",
+    "caption": "↑／↓ 每次調整 1 秒，Shift+Enter 儲存並在背景試播。",
+    "voice": "這支影片示範在管理頁用方向鍵微調時間，再用 Shift 加 Enter 試播，反覆找到最合適的位置。",
+    "kind": "card",
+    "hero": "微調一秒，立即試播。",
+    "summary": "↑／↓ 調整 → Shift + Enter 試播 → 繼續微調"
+  },
+  {
+    "id": "focus",
+    "title": "01  在 EDIT 模式選取 timecode",
+    "caption": "先切到 EDIT，再點要調整的時間欄位；這筆標記從 00:00:45 開始。",
+    "voice": "先切到編輯模式，再點要調整的時間欄位。這筆標記目前是四十五秒。",
+    "kind": "manage"
+  },
+  {
+    "id": "up",
+    "title": "02  ↑：每按一次增加 1 秒",
+    "caption": "在 timecode 欄位按 ↑：00:00:45 → 00:00:46 → 00:00:47。",
+    "voice": "在時間欄位按向上鍵，每次增加一秒。按兩次，就從四十五秒調整到四十七秒。",
+    "kind": "manage"
+  },
+  {
+    "id": "down",
+    "title": "03  ↓：每按一次減少 1 秒",
+    "caption": "按 ↓ 往前微調：00:00:47 → 00:00:46 → 00:00:45 → 00:00:44。",
+    "voice": "想往前一點，就按向下鍵，每次減少一秒。這裡按三次，調整到四十四秒。",
+    "kind": "manage"
+  },
+  {
+    "id": "preview",
+    "title": "04  Shift + Enter：儲存並試播",
+    "caption": "按 Shift+Enter，儲存 00:00:44 並從該位置試播；畫面留在管理頁。",
+    "voice": "接著按 Shift 加 Enter。時間會儲存，影片從四十四秒在背景播放，畫面仍留在管理頁。",
+    "kind": "manage"
+  },
+  {
+    "id": "repeat",
+    "title": "05  再微調，再試播",
+    "caption": "游標留在原欄位。再按 ↓ 到 00:00:43，接著 Shift+Enter 重播。",
+    "voice": "游標會留在同一個欄位。你可以再按向下鍵調整一秒，接著按 Shift 加 Enter 重播，直到找到需要的位置。",
+    "kind": "manage"
+  },
+  {
+    "id": "saved",
+    "title": "06  確認調整已保存",
+    "caption": "重新載入管理頁後，標記仍是 00:00:43。",
+    "voice": "重新載入管理頁後，可以看到時間仍然是四十三秒，表示剛才的調整已經保存。",
+    "kind": "manage"
+  },
+  {
+    "id": "outro",
+    "title": "調整 → 試播 → 再調整",
+    "caption": "↑ 加 1 秒｜↓ 減 1 秒｜Shift+Enter 儲存並在背景試播。",
+    "voice": "記住這三個操作。向上加一秒，向下減一秒，Shift 加 Enter 儲存並試播。",
+    "kind": "card",
+    "hero": "不用離開管理頁，反覆調整。",
+    "summary": "↑ +1 秒　　↓ −1 秒　　Shift + Enter 試播"
+  }
+]

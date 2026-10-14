@@ -1,0 +1,67 @@
+[
+  {
+    "start": 0,
+    "title": "soonmarker 操作教學",
+    "duration": 9.82
+  },
+  {
+    "start": 9.82,
+    "title": "01  開啟標記視窗",
+    "duration": 11.46
+  },
+  {
+    "start": 21.28,
+    "title": "02  輸入說明，儲存目前位置",
+    "duration": 8.94
+  },
+  {
+    "start": 30.22,
+    "title": "03  CUE：定位並暫停",
+    "duration": 8.05
+  },
+  {
+    "start": 38.27,
+    "title": "定位完成：00:00:45",
+    "duration": 4.66
+  },
+  {
+    "start": 42.93,
+    "title": "04  PLAY：從標記開始播放",
+    "duration": 6.58
+  },
+  {
+    "start": 49.51,
+    "title": "從標記位置開始播放",
+    "duration": 6
+  },
+  {
+    "start": 55.51,
+    "title": "05  新增的影片，先在 backlog",
+    "duration": 11.04
+  },
+  {
+    "start": 66.55,
+    "title": "06  先新增 Episode：ep1",
+    "duration": 10.75
+  },
+  {
+    "start": 77.3,
+    "title": "07  從 backlog 加入 ep1",
+    "duration": 12.36
+  },
+  {
+    "start": 89.66,
+    "title": "08  拖拉影片，調整同一集內的順序",
+    "duration": 12.73
+  },
+  {
+    "start": 102.39,
+    "title": "09  搜尋筆記，快速回看",
+    "duration": 6.9
+  },
+  {
+    "start": 109.29,
+    "title": "下次看到重點，就把時間記下來",
+    "duration": 9.58
+  }
+]

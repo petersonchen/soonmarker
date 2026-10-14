@@ -1,0 +1,97 @@
+[
+  {
+    "id": "intro",
+    "title": "soonmarker 操作教學",
+    "caption": "標記影片 → backlog → 新增 Episode → 加入影片 → 拖拉排序。",
+    "voice": "這段教學從標記影片開始，接著說明待整理區、新增集數、加入影片，以及拖拉排序。",
+    "kind": "card",
+    "hero": "先記下重點，再整理影片。",
+    "summary": "標記 → backlog → 新增 Episode → 拖拉排序"
+  },
+  {
+    "id": "open",
+    "title": "01  開啟標記視窗",
+    "caption": "播放到重點，點工具列的 soonmarker。找不到圖示時，從擴充功能拼圖開啟。",
+    "voice": "影片播放到重點時，可以先暫停，再點工具列的 soon marker。找不到圖示，就從右上角的擴充功能拼圖開啟。",
+    "kind": "popup"
+  },
+  {
+    "id": "save",
+    "title": "02  輸入說明，儲存目前位置",
+    "caption": "輸入 Marker 說明，按「＋ 儲存目前位置」。標記會出現在下方清單。",
+    "voice": "輸入這個位置的說明，再按儲存目前位置。新的時間標記，就會出現在下方清單。",
+    "kind": "popup"
+  },
+  {
+    "id": "cue",
+    "title": "03  CUE：定位並暫停",
+    "caption": "按標記旁的 CUE，回到指定時間並暫停。",
+    "voice": "想先確認片段時，按標記旁的 Q 按鈕，影片就會回到指定時間並暫停。",
+    "kind": "popup"
+  },
+  {
+    "id": "cue-result",
+    "title": "定位完成：00:00:45",
+    "caption": "影片已回到 45 秒，保持暫停。",
+    "voice": "這裡已經回到四十五秒，並保持暫停。",
+    "kind": "player"
+  },
+  {
+    "id": "play",
+    "title": "04  PLAY：從標記開始播放",
+    "caption": "再開啟 soonmarker，按同一個標記旁的 PLAY。",
+    "voice": "要直接觀看，就再開啟 soon marker，按同一個標記旁的 Play。",
+    "kind": "popup"
+  },
+  {
+    "id": "play-result",
+    "title": "從標記位置開始播放",
+    "caption": "從 45 秒開始播放，省去反覆拖曳進度條。",
+    "voice": "影片會從標記的位置開始播放，不必反覆拖曳進度條。",
+    "kind": "player"
+  },
+  {
+    "id": "backlog",
+    "title": "05  新增的影片，先在 backlog",
+    "caption": "尚未加入任何 Episode 的影片，會顯示在 backlog；這裡準備了兩支。",
+    "voice": "打開管理頁。尚未加入任何集數的影片，會顯示在 backlog，也就是待整理區。這裡準備了兩支示範影片。",
+    "kind": "manage"
+  },
+  {
+    "id": "new-episode",
+    "title": "06  先新增 Episode：ep1",
+    "caption": "在 EDIT 模式按「＋ 新增 Episode」，輸入 ep1，再按「儲存」。",
+    "voice": "目前還沒有集數。先在編輯模式按新增 Episode，輸入 E P 一，再按儲存。這樣才會出現新的集數。",
+    "kind": "manage"
+  },
+  {
+    "id": "assign",
+    "title": "07  從 backlog 加入 ep1",
+    "caption": "勾選 backlog 的影片 → 加入 Episode → 選 ep1 → 確認加入。",
+    "voice": "勾選待整理區的影片，按加入 Episode。選擇剛建立的 E P 一，再確認加入。影片就會出現在這一集，並離開待整理區。",
+    "kind": "manage"
+  },
+  {
+    "id": "drag",
+    "title": "08  拖拉影片，調整同一集內的順序",
+    "caption": "清空搜尋，在 EDIT 模式拖曳影片標題左側的 ⋮⋮，移到目標位置。",
+    "voice": "要調整順序，先清空搜尋並保持編輯模式。按住影片標題左側的拖拉把手，移到另一支影片上方，放開就完成排序。",
+    "kind": "manage"
+  },
+  {
+    "id": "search",
+    "title": "09  搜尋筆記，快速回看",
+    "caption": "輸入筆記關鍵字，就能找到相關影片與時間標記。",
+    "voice": "在搜尋欄輸入筆記的關鍵字，就能找到相關影片和時間標記。",
+    "kind": "manage"
+  },
+  {
+    "id": "outro",
+    "title": "下次看到重點，就把時間記下來",
+    "caption": "快捷鍵：Windows／Linux Alt+Shift+M；macOS Option+Shift+M。",
+    "voice": "也可以用快捷鍵直接儲存目前位置，稍後再補筆記。下次看到重點，就把時間記下來。",
+    "kind": "card",
+    "hero": "先記下，再整理，隨時回看。",
+    "summary": "新增影片先進 backlog；建立 Episode 後再加入。"
+  }
+]

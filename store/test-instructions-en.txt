@@ -1,0 +1,14 @@
+No soonmarker account, subscription, or test credentials are required. Use a publicly accessible, seekable video on a supported website. YouTube test video: https://www.youtube.com/watch?v=eRsGyueVLvQ (Sintel, Blender). A website may impose its own availability restrictions.
+
+Additional recordings tested on October 14, 2026:
+Taipei City Council: https://live.tcc.gov.tw/iSharePortalWeb/User/VideoData.aspx?vdvno=df8f90b0-f267-4df7-8cd1-4cc63f0b1cf8
+Legislative Yuan IVOD member clip: https://ivod.ly.gov.tw/Play/Clip/1M/168273
+
+1. Open a YouTube watch page and wait for any advertisement to finish. Start playback, then open the soonmarker toolbar popup.
+2. Enter a marker note and click “＋ 儲存目前位置”. Confirm that a timestamped marker appears. Reload the video page and reopen the popup; the marker should remain.
+3. Click CUE for the marker: playback should seek to the marker and pause. Click PLAY: playback should seek and start. If Chrome blocks autoplay, press play on the website.
+4. Press Alt+Shift+M (Option+Shift+M on macOS) on the video page. A new marker should be saved. If the shortcut is occupied, configure it at chrome://extensions/shortcuts.
+5. Click “管理” in the popup. A fresh installation defaults to EDIT mode. Create ep1 and add the video; create ep2 to test shared membership. Edit a marker's note and timestamp, then search for that note.
+6. Export the Episode as JSON and preview importing it. Duplicate marker IDs should not create duplicate markers. A complete backup includes settings and deleted-marker records.
+7. Repeat save/CUE/PLAY on a Taipei City Council recording at https://live.tcc.gov.tw/ and an IVOD recording at https://ivod.ly.gov.tw/ (Play/Clip or Play/Full).
+8. YouTube Shorts, embedded players on other domains, and IVOD live pages are unsupported. YouTube advertisements must finish before saving a marker.

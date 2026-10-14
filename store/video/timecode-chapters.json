@@ -1,0 +1,42 @@
+[
+  {
+    "start": 0,
+    "title": "管理頁 timecode 微調教學",
+    "duration": 9.84
+  },
+  {
+    "start": 9.84,
+    "title": "01  在 EDIT 模式選取 timecode",
+    "duration": 7.76
+  },
+  {
+    "start": 17.6,
+    "title": "02  ↑：每按一次增加 1 秒",
+    "duration": 8.96
+  },
+  {
+    "start": 26.56,
+    "title": "03  ↓：每按一次減少 1 秒",
+    "duration": 8.69
+  },
+  {
+    "start": 35.25,
+    "title": "04  Shift + Enter：儲存並試播",
+    "duration": 9.48
+  },
+  {
+    "start": 44.73,
+    "title": "05  再微調，再試播",
+    "duration": 10.82
+  },
+  {
+    "start": 55.55,
+    "title": "06  確認調整已保存",
+    "duration": 8.66
+  },
+  {
+    "start": 64.21,
+    "title": "調整 → 試播 → 再調整",
+    "duration": 8.41
+  }
+]
